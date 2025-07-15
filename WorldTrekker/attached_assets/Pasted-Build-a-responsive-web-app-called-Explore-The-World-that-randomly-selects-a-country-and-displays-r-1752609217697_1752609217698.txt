@@ -1,0 +1,80 @@
+Build a responsive web app called "Explore The World" that randomly selects a country and displays rich, educational information about it. The app should use real-time external APIs and include sections for basic data, historical context, cultural highlights, famous places to visit, traditional food, and images.
+
+🎯 Functional Requirements:
+Random Country Generator
+
+On page load or via a "Explore Another Country" button, fetch a random country.
+
+Use https://restcountries.com/v3.1/all to get a list and pick randomly.
+
+Country Info (Structured Data)
+
+Use REST Countries API to display:
+
+Name, flag, population, region, languages, capital, and Google Maps link.
+
+Flag image (from flags.png field).
+
+Wikipedia Summary
+
+Use Wikipedia REST API to fetch a short summary of the country (history/culture/overview).
+
+Example endpoint: https://en.wikipedia.org/api/rest_v1/page/summary/{country_name}
+
+Images of the Country, Food, and Landmarks
+
+Use Unsplash API to fetch relevant images with search terms like:
+
+{country_name} landmarks
+
+{country_name} traditional food
+
+{country_name} culture
+
+Display images in a horizontal scroll or image grid (use a placeholder if image fetch fails).
+
+Requires client_id API key from Unsplash.
+
+Design/UI Requirements
+
+Responsive layout using modern UI (TailwindCSS or Chakra UI).
+
+Show flag and name at the top as a hero section.
+
+Below that, split into 3 sections:
+
+🇺🇳 Country Data (population, capital, language, region)
+
+📖 Description (Wikipedia summary)
+
+📷 Image Grid (landmarks, food, culture)
+
+Include a "Discover Another Country" button to refresh with a new country.
+
+Tech Stack
+
+Frontend: React with Tailwind CSS
+
+Backend (if needed): Node.js or simple API layer using Next.js
+
+APIs:
+
+REST Countries
+
+Wikipedia
+
+Unsplash (via fetch() with API key)
+
+⚠️ Notes:
+Ensure graceful fallback if one API fails (e.g., show message or skip that section).
+
+Handle CORS where needed, especially with Wikipedia and image APIs.
+
+Do not use hardcoded country info; everything must be fetched dynamically.
+
+🔄 Bonus Features (Optional if time allows):
+Add a loading spinner while fetching
+
+Add a “Country of the Day” banner or card
+
+Add search functionality to look up a specific country
